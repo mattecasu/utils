@@ -1,0 +1,24 @@
+server.port: 8080
+
+info:
+  build:
+    artifact: "@project.artifactId@"
+    description: "@project.description@"
+    version: "@project.version@"
+
+endpoints.health.sensitive: false
+
+logging.level.root: INFO
+
+management.security.enabled: false
+spring.jackson.default-property-inclusion: non_null
+
+mail:
+  smtp:
+    host: smtp.googlemail.com
+    port: 465
+  user: test@test
+  pwd: 123
+  from: test@test
+  tos: test@test,test2@test
+  enabled: true
