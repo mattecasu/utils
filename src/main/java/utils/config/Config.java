@@ -28,7 +28,7 @@ public class Config {
     private Integer smtpPort;
 
     @Bean
-    public MailSender mailReporter() {
+    public MailSender mailSender() {
         return new MailSender(mailHost, mailUser, mailPwd, mailFrom, smtpPort);
     }
 
