@@ -1,6 +1,7 @@
 package utils.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,7 +15,7 @@ import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.collect.Maps.newHashMap;
 import static java.util.Arrays.asList;
 
-@ToString(exclude = "content")
+@ToString(exclude = "tikaMetadata")
 @Accessors(chain = true)
 public class TikaDocument {
 
@@ -22,6 +23,7 @@ public class TikaDocument {
     @Setter
     private String content;
 
+    @JsonIgnore
     @Getter
     private final Metadata tikaMetadata;
 
@@ -32,6 +34,9 @@ public class TikaDocument {
     @Getter
     @Setter
     private byte[] originalDocAsBytes;
+
+    @Setter
+    private Map<String, Object> metadata;
 
 
     public TikaDocument(String content, Metadata tikaMetadata) {

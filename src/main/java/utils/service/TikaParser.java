@@ -39,9 +39,9 @@ public class TikaParser {
     @Getter
     private static final String PARSING_ERROR_FIELD = "parsingError";
 
-    public static TikaDocument process(InputStream stream, boolean withOcr) {
+    public static TikaDocument process(InputStream stream, boolean withOcr, BasicContentHandlerFactory.HANDLER_TYPE handlerType) {
 
-        List<Metadata> metadatas = extractWithEmbedded(stream, withOcr, BasicContentHandlerFactory.HANDLER_TYPE.HTML);
+        List<Metadata> metadatas = extractWithEmbedded(stream, withOcr, handlerType);
 
         Metadata masterDocMetadata = metadatas.remove(0);
 
@@ -71,7 +71,7 @@ public class TikaParser {
 
             TikaDocument newDoc = new TikaDocument(content, metadata);
             newDoc.getTikaMetadata().set("size", String.valueOf(content.getBytes().length));
-
+            newDoc.setMetadata(newDoc.getTikaMetadataAsMap());
             // direct child
             if (path.size() == 1) {
                 masterDoc.getEmbeddedDocuments().add(newDoc);
@@ -83,7 +83,8 @@ public class TikaParser {
 
         }
 
-        return masterDoc;
+        return masterDoc
+                .setMetadata(masterDoc.getTikaMetadataAsMap());
     }
 
 
