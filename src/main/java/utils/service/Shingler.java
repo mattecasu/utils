@@ -18,7 +18,7 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
 @Slf4j
 public class Shingler {
 
-    public List<TextPortion> getShingles(String text, int maxShingleSize) {
+    public static List<TextPortion> getShingles(String text, int maxShingleSize) {
 
         List<TextPortion> ngrams = newArrayList();
 
