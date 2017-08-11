@@ -62,7 +62,7 @@
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-s3</artifactId>
-            <version>1.11.172</version>
+            <version>1.11.174</version>
         </dependency>
 
         <dependency>
@@ -123,7 +123,7 @@
 
 
     <build>
-        <finalName>syngenta-doc-processor</finalName>
+        <finalName>utils</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

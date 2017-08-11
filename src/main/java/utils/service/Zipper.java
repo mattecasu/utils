@@ -14,8 +14,8 @@ import java.util.zip.ZipOutputStream;
 @Slf4j
 public class Zipper {
 
-    public static File prepareZip(List<File> files) throws IOException {
-        final File zipFile = File.createTempFile("files", ".zip");
+    public static File prepareZip(List<File> files, String zipFileName) throws IOException {
+        final File zipFile = File.createTempFile(zipFileName, ".zip");
         log.info("Zip file: " + zipFile.getAbsolutePath());
         try (final ZipOutputStream zipOutputStream = new ZipOutputStream(new FileOutputStream(zipFile))) {
 
