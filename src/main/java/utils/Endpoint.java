@@ -27,7 +27,9 @@ public class Endpoint {
     public @ResponseBody
     TikaDocument processWithTika(@RequestBody byte[] file, @RequestParam(defaultValue = "html") String handlerType) {
 
-        BasicContentHandlerFactory.HANDLER_TYPE tikaHandler = BasicContentHandlerFactory.HANDLER_TYPE.valueOf(handlerType.toUpperCase());
+        BasicContentHandlerFactory.HANDLER_TYPE tikaHandler = BasicContentHandlerFactory.HANDLER_TYPE.valueOf(
+                handlerType.toUpperCase()
+        );
 
         TikaDocument tikaDocument = TikaParser.process(new ByteArrayInputStream(file), false, tikaHandler);
 
