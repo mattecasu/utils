@@ -25,11 +25,11 @@ import java.util.UnknownFormatConversionException;
 
 import static com.google.common.collect.Lists.newArrayList;
 import static java.util.stream.Collectors.toList;
-import static org.apache.commons.lang.StringUtils.EMPTY;
-import static org.apache.tika.parser.RecursiveParserWrapper.EMBEDDED_RESOURCE_PATH;
-import static org.apache.tika.parser.RecursiveParserWrapper.TIKA_CONTENT;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.apache.tika.parser.pdf.PDFParserConfig.OCR_STRATEGY.NO_OCR;
 import static org.apache.tika.parser.pdf.PDFParserConfig.OCR_STRATEGY.OCR_ONLY;
+import static org.apache.tika.sax.AbstractRecursiveParserWrapperHandler.EMBEDDED_RESOURCE_PATH;
+import static org.apache.tika.sax.AbstractRecursiveParserWrapperHandler.TIKA_CONTENT;
 
 
 @Slf4j

@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'org.springframework.boot' version '2.4.3'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    implementation 'org.projectlombok:lombok:1.18.18'
+    annotationProcessor 'org.projectlombok:lombok:1.18.18'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.4.3'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.4.3'
+    implementation 'com.google.guava:guava:23.5-jre'
+    implementation 'junit:junit:4.12'
+    implementation 'com.github.jknack:handlebars:4.0.6'
+    implementation 'org.apache.tika:tika-core:1.25'
+    implementation 'org.apache.tika:tika-parsers:1.25'
+    implementation 'com.mashape.unirest:unirest-java:1.4.9'
+    implementation "io.springfox:springfox-boot-starter:3.0.0"
+    implementation 'org.hamcrest:hamcrest-junit:2.0.0.0'
+    implementation 'org.apache.commons:commons-email:1.5'
+    implementation 'org.apache.lucene:lucene-analyzers-common:8.8.1'
+    implementation 'org.slf4j:slf4j-simple:1.8.0-beta4'
+    implementation 'org.slf4j:slf4j-api:1.8.0-beta4'
+}
+
+group = 'casu.matteo.utils'
+version = '1.0'
+description = 'utils'
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

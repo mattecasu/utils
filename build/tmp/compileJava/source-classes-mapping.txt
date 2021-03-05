@@ -1,0 +1,26 @@
+utils/config/SwaggerConfig.java
+ utils.config.SwaggerConfig
+utils/service/TikaParser.java
+ utils.service.TikaParser
+utils/service/MailSender.java
+ utils.service.MailSender
+utils/Endpoint.java
+ utils.Endpoint
+utils/service/Zipper.java
+ utils.service.Zipper
+utils/service/Shingler.java
+ utils.service.Shingler
+utils/exception/My500Exception.java
+ utils.exception.My500Exception
+utils/service/StringDedupper.java
+ utils.service.StringDedupper
+utils/model/TextPortion.java
+ utils.model.TextPortion
+utils/model/TikaDocument.java
+ utils.model.TikaDocument
+utils/Application.java
+ utils.Application
+utils/config/Config.java
+ utils.config.Config
+utils/service/Unzipper.java
+ utils.service.Unzipper
